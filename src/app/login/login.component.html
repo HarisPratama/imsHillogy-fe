@@ -1,0 +1,24 @@
+<div class="container">
+    <div>
+        <p class="title-page">Sign In</p>
+        <form [formGroup]="formBuilder" (ngSubmit)="submit()" class="container-form">
+            <mat-form-field class="field-full-width">
+                <mat-label>Email or Username</mat-label>
+                <input class="inp-field" matInput placeholder="Enter your email or username" formControlName="email"  required>
+                <div class="error-msg" *ngIf="getField('email')?.invalid">
+                    <mat-error>{{getErrorMessage('email')}}</mat-error>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field class="field-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" placeholder="Enter your Password" type="password">
+                <div class="error-msg" *ngIf="getField('password')?.invalid">
+                    <mat-error>{{getErrorMessage('password')}}</mat-error>
+                </div>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.container {
+    padding: 20px;
+    width: 500px;
+
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .field-full-width {
+            width: 100%;
+        }
+    }
+}

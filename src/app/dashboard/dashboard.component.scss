@@ -1,0 +1,25 @@
+.container {
+    min-height: 100vh;
+
+    .list-link {
+        text-decoration: none;
+        color: black;
+    }
+
+    .sidenav {
+        padding: 20px;
+        width: 260px;
+    }
+
+    .sidenav-content {
+        padding: 20px;
+        height: 100%;
+        display: flex;
+
+        .outlet {
+            margin-top: 50px;
+            padding: 20px;
+            width: 100%;
+        }
+    }
+}

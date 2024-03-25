@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Add Item</h2>
+<mat-dialog-content>
+    <div class="container">
+        <form [formGroup]="formBuilder" (ngSubmit)="submit()" class="container-form">
+            <mat-form-field class="field-full-width">
+                <mat-label>Item Name</mat-label>
+                <input type="text" class="inp-field" matInput placeholder="Enter your item name" formControlName="name"  required>
+                <div class="error-msg" *ngIf="getField('name')?.invalid">
+                    <mat-error>{{getErrorMessage('name')}}</mat-error>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field class="field-full-width">
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description" placeholder="Enter item description" type="text">
+                <div class="error-msg" *ngIf="getField('description')?.invalid">
+                    <mat-error>{{getErrorMessage('description')}}</mat-error>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field class="field-full-width">
+                <mat-label>Price</mat-label>
+                <input matInput formControlName="price" placeholder="Enter item price" type="number">
+                <span matTextPrefix>$&nbsp;</span>
+                <span matTextSuffix>.00</span>
+                <div class="error-msg" *ngIf="getField('price')?.invalid">
+                    <mat-error>{{getErrorMessage('price')}}</mat-error>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field class="field-full-width">
+                <mat-label>Quantity</mat-label>
+                <input matInput formControlName="quantity" placeholder="Enter item quantity" type="number">
+                <div class="error-msg" *ngIf="getField('quantity')?.invalid">
+                    <mat-error>{{getErrorMessage('quantity')}}</mat-error>
+                </div>
+            </mat-form-field>
+        
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </form>
+    </div>
+</mat-dialog-content>

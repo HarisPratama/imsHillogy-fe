@@ -1,0 +1,28 @@
+
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <h1>Dashboard</h1>
+
+        <mat-list role="list">
+        <mat-list-item role="listitem">
+            <a class="list-link" routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Inventory</a>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            <a class="list-link" routerLink="/dashboard/users" routerLinkActive="active" ariaCurrentWhenActive="page">Users</a>
+        </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+
+    <div class="sidenav-content">
+        <div>
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+                </button>
+        </div>
+
+        <div class="outlet">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+  
+</mat-drawer-container>

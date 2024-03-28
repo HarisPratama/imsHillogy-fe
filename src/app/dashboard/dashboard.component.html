@@ -7,8 +7,11 @@
         <mat-list-item role="listitem">
             <a class="list-link" routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Inventory</a>
         </mat-list-item>
-        <mat-list-item role="listitem">
+        <mat-list-item *ngIf="role === 'admin'" role="listitem">
             <a class="list-link" routerLink="/dashboard/users" routerLinkActive="active" ariaCurrentWhenActive="page">Users</a>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            <a class="list-link" routerLink="/dashboard/transactions" routerLinkActive="active" ariaCurrentWhenActive="page">Transactions</a>
         </mat-list-item>
         </mat-list>
     </mat-drawer>
@@ -23,6 +26,8 @@
         <div class="outlet">
             <router-outlet></router-outlet>
         </div>
+
+        <button mat-raised-button color="warn" (click)="logout()">Logout</button>
     </div>
   
 </mat-drawer-container>

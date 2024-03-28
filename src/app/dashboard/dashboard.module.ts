@@ -16,6 +16,11 @@ import { DashboardComponent } from './dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { AddItemComponent } from './inventory/component/dialog/add-item/add-item.component';
 import { MatInputModule } from '@angular/material/input';
+import { ConfirmComponent } from '../components/dialog/confirm/confirm.component';
+import { SetThresholdComponent } from './inventory/component/dialog/set-threshold/set-threshold.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TransactionComponent } from './transaction/transaction.component';
 
 
 @NgModule({
@@ -23,7 +28,10 @@ import { MatInputModule } from '@angular/material/input';
     InventoryComponent,
     DashboardComponent,
     UsersComponent,
-    AddItemComponent
+    AddItemComponent,
+    ConfirmComponent,
+    SetThresholdComponent,
+    TransactionComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +46,9 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatSnackBarModule
   ]
 })
 export class DashboardModule { }

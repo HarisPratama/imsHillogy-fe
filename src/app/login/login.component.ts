@@ -59,6 +59,7 @@ export class LoginComponent {
         .subscribe((resp) => {
           if(resp.status == 'Success') {
             localStorage.setItem('accessToken', resp.accessToken)
+            localStorage.setItem('role', resp.data.role)
             this.router.navigate(['/dashboard'])
           }
         })

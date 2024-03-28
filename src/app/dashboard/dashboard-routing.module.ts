@@ -5,6 +5,7 @@ import { UsersComponent } from './users/users.component';
 import { DashboardComponent } from './dashboard.component';
 import { authGuard } from '../auth/auth.guard';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'users',
         component: UsersComponent,
+      },
+      {
+        path: 'transactions',
+        component: TransactionComponent,
       }
     ],
   },

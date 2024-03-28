@@ -36,7 +36,7 @@
                 </div>
             </mat-form-field>
         
-            <button mat-raised-button color="primary" type="submit">Submit</button>
+            <button [disabled]="formBuilder.invalid" mat-raised-button color="primary" type="submit">Submit</button>
         </form>
     </div>
 </mat-dialog-content>

@@ -13,15 +13,20 @@ import { LoginComponent } from './login/login.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { StoreModule } from '@ngrx/store';
 import { itemReducer } from './stores/item/item.reducer';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { AuthInterceptor } from 'src/http-interceptors/auth-interceptor';
+import { WarnComponent } from './components/dialog/warn/warn.component';
+import { userReducer } from './stores/user/user.reducers';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    WarnComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +40,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatButtonModule,
     DashboardModule,
     HttpClientModule,
-    StoreModule.forRoot({ item: itemReducer })
+    StoreModule.forRoot({ item: itemReducer, user: userReducer })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

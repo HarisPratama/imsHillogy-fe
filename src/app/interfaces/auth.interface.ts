@@ -3,6 +3,12 @@ export interface LoginPayload {
   password: string;
 }
 
+export interface RegisterPayload {
+  username: string;
+  email: string;
+  password: string;
+}
+
 export interface LoginResponse {
   status: string;
   data:{
@@ -12,4 +18,8 @@ export interface LoginResponse {
       role: string;
   },
   accessToken: string;
+}
+export interface RegisterResponse {
+  status: string;
+  message?: string;
 }

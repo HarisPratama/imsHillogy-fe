@@ -5,6 +5,7 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { authGuardIsLoggedOut } from './auth/auth.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -19,8 +20,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/dashboard',
-    pathMatch: 'full'
+    component: HomeComponent
   },
 ];
 

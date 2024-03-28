@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Welcome</h1>
+    <div *ngIf="!isLogedIn">
+        <p>You can <a class="list-link" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a></p>
+    </div>
+    <div *ngIf="isLogedIn">
+        <p>You can go to <a class="list-link" routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">dashboard</a></p>
+    </div>
+</div>

@@ -19,6 +19,7 @@ import { AuthInterceptor } from 'src/http-interceptors/auth-interceptor';
 import { WarnComponent } from './components/dialog/warn/warn.component';
 import { userReducer } from './stores/user/user.reducers';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RegisterComponent } from './register/register.component';
     PageNotFoundComponent,
     WarnComponent,
     RegisterComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
